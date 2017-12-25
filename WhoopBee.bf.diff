@@ -1,0 +1,26 @@
+
+CLI
+
+# diff
+# Betaflight / BEEBRAIN 3.1.7 Apr  3 2017 / 21:52:56 (e1c4b5c)
+
+feature -MOTOR_STOP
+feature AIRMODE
+map ETAR1234
+aux 0 0 0 1800 2100
+aux 1 1 3 1800 2100
+set min_throttle = 1052
+set disarm_kill_switch = OFF
+set serialrx_provider = SBUS
+set vbat_min_cell_voltage = 32
+set gyro_sync_denom = 3
+set yaw_motor_direction = -1
+set failsafe_delay = 1
+set failsafe_throttle_low_delay = 1
+profile 0
+
+rateprofile 0
+rateprofile 0
+
+
+# 
