@@ -1,9 +1,9 @@
 
-
 # diff
 # Betaflight / BETAFLIGHTF3 (BFF3) 3.2.2 Nov 11 2017 / 00:21:21 (77782e602) MSP API: 1.36
 
 feature AIRMODE
+feature ANTI_GRAVITY
 beeper -GYRO_CALIBRATED
 beeper -RX_LOST
 beeper -RX_LOST_LANDING
@@ -69,14 +69,14 @@ set osd_esc_rpm_pos = 83
 set vcd_video_system = 2
 profile 0
 
-rateprofile 0
+rateprofile 1
 
-set rc_rate = 148
-set rc_rate_yaw = 141
-set rc_expo = 25
-set rc_expo_yaw = 17
-set roll_srate = 64
-set pitch_srate = 64
-set yaw_srate = 62
+set rc_rate = 110
+set rc_rate_yaw = 110
+set rc_expo = 10
+set rc_expo_yaw = 10
+set roll_srate = 66
+set pitch_srate = 66
+set yaw_srate = 66
 
 # 

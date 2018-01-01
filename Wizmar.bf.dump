@@ -1,5 +1,4 @@
 
-
 # dump
 # Betaflight / BETAFLIGHTF3 (BFF3) 3.2.2 Nov 11 2017 / 00:21:21 (77782e602) MSP API: 1.36
 name -
@@ -117,6 +116,7 @@ feature RX_SERIAL
 feature TELEMETRY
 feature OSD
 feature AIRMODE
+feature ANTI_GRAVITY
 beeper -GYRO_CALIBRATED
 beeper -RX_LOST
 beeper -RX_LOST_LANDING
@@ -551,17 +551,17 @@ set d_vel = 75
 set level_limit = 55
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
-rateprofile 0
+rateprofile 1
 
-set rc_rate = 148
-set rc_rate_yaw = 141
-set rc_expo = 25
-set rc_expo_yaw = 17
+set rc_rate = 110
+set rc_rate_yaw = 110
+set rc_expo = 10
+set rc_expo_yaw = 10
 set thr_mid = 50
 set thr_expo = 0
-set roll_srate = 64
-set pitch_srate = 64
-set yaw_srate = 62
+set roll_srate = 66
+set pitch_srate = 66
+set yaw_srate = 66
 set tpa_rate = 10
 set tpa_breakpoint = 1650
 
