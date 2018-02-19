@@ -12,6 +12,7 @@ aux 3 35 2 1750 2100
 rxfail 3 h
 set rssi_channel = 6
 set motor_pwm_protocol = DSHOT600
+set small_angle = 180
 set osd_vbat_pos = 2440
 set osd_rssi_pos = 2427
 set osd_tim_1_pos = 54
@@ -51,14 +52,10 @@ set osd_esc_rpm_pos = 83
 set vcd_video_system = 2
 profile 0
 
-rateprofile 1
+rateprofile 0
 
 set rc_rate = 120
 set rc_rate_yaw = 105
-set rc_expo = 20
-set rc_expo_yaw = 15
-set roll_srate = 64
-set pitch_srate = 64
-set yaw_srate = 62
-
-# 
+set roll_srate = 66
+set pitch_srate = 66
+set yaw_srate = 56
