@@ -4,6 +4,7 @@
 feature AIRMODE
 feature ANTI_GRAVITY
 feature DYNAMIC_FILTER
+beeper -BAT_LOW
 beeper -ON_USB
 serial 1 2048 115200 57600 0 115200
 serial 2 64 115200 57600 0 115200
@@ -59,11 +60,19 @@ set vcd_video_system = 2
 profile 0
 
 set dterm_lowpass_type = PT1
+set anti_gravity_gain = 4000
 set dterm_setpoint_weight = 100
+set p_pitch = 60
+set i_pitch = 60
+set d_pitch = 30
+set p_roll = 50
+set i_roll = 50
+set d_roll = 25
 rateprofile 0
 
 set rc_rate = 120
 set rc_expo = 10
+set rc_expo_yaw = 10
 set roll_srate = 66
 set pitch_srate = 66
 set yaw_srate = 56
