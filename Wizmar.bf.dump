@@ -139,7 +139,7 @@ beeper BLACKBOX_ERASE
 map AETR1234
 serial 20 1 115200 57600 0 115200
 serial 0 32 115200 57600 0 115200
-serial 1 2048 115200 57600 0 115200
+serial 1 8192 115200 57600 0 115200
 serial 2 64 115200 57600 0 115200
 led 0 0,0::C:0
 led 1 0,0::C:0
@@ -435,15 +435,15 @@ set osd_tim2 = 2561
 set osd_vbat_pos = 2440
 set osd_rssi_pos = 2427
 set osd_tim_1_pos = 54
-set osd_tim_2_pos = 2432
+set osd_tim_2_pos = 2456
 set osd_flymode_pos = 2450
 set osd_throttle_pos = 225
-set osd_vtx_channel_pos = 2457
+set osd_vtx_channel_pos = 409
 set osd_crosshairs = 200
 set osd_ah_sbar = 200
 set osd_ah_pos = 200
-set osd_current_pos = 2368
-set osd_mah_drawn_pos = 2401
+set osd_current_pos = 2432
+set osd_mah_drawn_pos = 2400
 set osd_craft_name_pos = 362
 set osd_gps_speed_pos = 218
 set osd_gps_lon_pos = 82
@@ -477,7 +477,7 @@ set osd_stat_max_curr = ON
 set osd_stat_used_mah = ON
 set osd_stat_max_alt = OFF
 set osd_stat_bbox = ON
-set osd_stat_endbatt = OFF
+set osd_stat_endbatt = ON
 set osd_stat_bb_no = ON
 set osd_stat_tim_1 = OFF
 set osd_stat_tim_2 = ON
@@ -564,5 +564,3 @@ set pitch_srate = 66
 set yaw_srate = 56
 set tpa_rate = 10
 set tpa_breakpoint = 1650
-
-# 

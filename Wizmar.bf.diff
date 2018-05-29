@@ -6,7 +6,7 @@ feature ANTI_GRAVITY
 feature DYNAMIC_FILTER
 beeper -BAT_LOW
 beeper -ON_USB
-serial 1 2048 115200 57600 0 115200
+serial 1 8192 115200 57600 0 115200
 serial 2 64 115200 57600 0 115200
 aux 0 0 0 1900 2100
 aux 1 2 3 1400 1600
@@ -23,14 +23,15 @@ set pid_process_denom = 1
 set osd_vbat_pos = 2440
 set osd_rssi_pos = 2427
 set osd_tim_1_pos = 54
-set osd_tim_2_pos = 2432
+set osd_tim_2_pos = 2456
 set osd_flymode_pos = 2450
 set osd_throttle_pos = 225
-set osd_vtx_channel_pos = 2457
+set osd_vtx_channel_pos = 409
 set osd_crosshairs = 200
 set osd_ah_sbar = 200
 set osd_ah_pos = 200
-set osd_current_pos = 2368
+set osd_current_pos = 2432
+set osd_mah_drawn_pos = 2400
 set osd_craft_name_pos = 362
 set osd_gps_speed_pos = 218
 set osd_gps_lon_pos = 82
@@ -56,6 +57,7 @@ set osd_nheading_pos = 311
 set osd_nvario_pos = 279
 set osd_esc_tmp_pos = 82
 set osd_esc_rpm_pos = 83
+set osd_stat_endbatt = ON
 set vcd_video_system = 2
 profile 0
 
