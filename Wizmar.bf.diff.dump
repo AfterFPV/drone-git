@@ -18,7 +18,7 @@ rxfail 3 h
 set gyro_sync_denom = 2
 set gyro_notch1_hz = 0
 set gyro_notch2_hz = 0
-set rssi_channel = 13
+set rssi_channel = 6
 set serialrx_provider = CRSF
 set motor_pwm_protocol = DSHOT600
 set vbat_scale = 111
@@ -407,7 +407,7 @@ set acc_trim_roll = 0
 set mid_rc = 1500
 set min_check = 1050
 set max_check = 1900
-set rssi_channel = 13
+set rssi_channel = 6
 set rssi_scale = 41
 set rssi_invert = OFF
 set rc_interp = AUTO
