@@ -18,7 +18,7 @@ rxfail 3 h
 set gyro_sync_denom = 2
 set gyro_notch1_hz = 0
 set gyro_notch2_hz = 0
-set gyro_stage2_lowpass_hz = 350
+set gyro_stage2_lowpass_hz = 325
 set rssi_channel = 9
 set serialrx_provider = CRSF
 set blackbox_p_ratio = 128
@@ -412,7 +412,7 @@ set gyro_notch1_hz = 0
 set gyro_notch1_cutoff = 300
 set gyro_notch2_hz = 0
 set gyro_notch2_cutoff = 100
-set gyro_stage2_lowpass_hz = 350
+set gyro_stage2_lowpass_hz = 325
 set moron_threshold = 48
 set gyro_offset_yaw = 0
 set gyro_overflow_detect = ALL
