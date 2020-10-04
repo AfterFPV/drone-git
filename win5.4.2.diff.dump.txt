@@ -12,10 +12,12 @@ batch start
 board_name KAKUTEF7
 manufacturer_id HBRO
 
+# name: win5
+
 # feature
 feature -RX_PARALLEL_PWM
 feature RX_SERIAL
-feature RANGEFINDER
+feature GPS
 feature TELEMETRY
 
 # beeper
@@ -24,6 +26,7 @@ beeper -ON_USB
 
 # serial
 serial 0 2048 115200 57600 0 115200
+serial 1 2 115200 57600 0 115200
 serial 3 32 115200 57600 0 115200
 serial 5 64 115200 57600 0 115200
 serial 6 1024 115200 57600 0 115200
@@ -49,23 +52,39 @@ vtxtable powerlabels 25 200 500 800
 
 # master
 set acc_calibration = 58,160,-118,1
+set mag_hardware = AUTO
 set baro_hardware = AUTO
 set serialrx_provider = CRSF
 set dshot_bidir = ON
 set motor_pwm_protocol = DSHOT600
 set yaw_motors_reversed = ON
 set small_angle = 180
+set gps_provider = UBLOX
+set gps_sbas_mode = AUTO
+set gps_rescue_allow_arming_without_fix = ON
+set osd_units = IMPERIAL
 set osd_vbat_pos = 2440
-set osd_rssi_pos = 2394
+set osd_rssi_pos = 346
 set osd_link_quality_pos = 2424
 set osd_rssi_dbm_pos = 345
 set osd_tim_2_pos = 2455
 set osd_flymode_pos = 2449
 set osd_current_pos = 2432
 set osd_mah_drawn_pos = 2400
-set osd_warnings_pos = 2057
+set osd_gps_speed_pos = 2136
+set osd_gps_sats_pos = 2048
+set osd_home_dir_pos = 2382
+set osd_home_dist_pos = 2072
+set osd_compass_bar_pos = 2410
+set osd_altitude_pos = 2112
+set osd_warnings_pos = 2058
+set vtx_band = 5
+set vtx_channel = 1
+set vtx_power = 3
+set vtx_freq = 5658
 set vcd_video_system = NTSC
 set gyro_1_align_yaw = 2700
+set name = win5
 
 profile 0
 
@@ -96,7 +115,7 @@ batch start
 board_name KAKUTEF7
 manufacturer_id HBRO
 
-# name: -
+# name: win5
 
 # resources
 resource BEEPER 1 D15
@@ -332,7 +351,7 @@ feature -ESC_SENSOR
 feature -ANTI_GRAVITY
 feature -DYNAMIC_FILTER
 feature RX_SERIAL
-feature RANGEFINDER
+feature GPS
 feature TELEMETRY
 feature OSD
 feature AIRMODE
@@ -375,7 +394,7 @@ map AETR1234
 # serial
 serial 20 1 115200 57600 0 115200
 serial 0 2048 115200 57600 0 115200
-serial 1 0 115200 57600 0 115200
+serial 1 2 115200 57600 0 115200
 serial 2 0 115200 57600 0 115200
 serial 3 32 115200 57600 0 115200
 serial 5 64 115200 57600 0 115200
@@ -625,7 +644,7 @@ set mag_bustype = I2C
 set mag_i2c_device = 1
 set mag_i2c_address = 0
 set mag_spi_device = 0
-set mag_hardware = NONE
+set mag_hardware = AUTO
 set mag_declination = 0
 set mag_calibration = 0,0,0
 set baro_bustype = I2C
@@ -760,8 +779,8 @@ set imu_dcm_ki = 0
 set small_angle = 180
 set auto_disarm_delay = 5
 set gyro_cal_on_first_arm = OFF
-set gps_provider = NMEA
-set gps_sbas_mode = NONE
+set gps_provider = UBLOX
+set gps_sbas_mode = AUTO
 set gps_sbas_integrity = OFF
 set gps_auto_config = ON
 set gps_auto_baud = OFF
@@ -790,7 +809,7 @@ set gps_rescue_throttle_hover = 1280
 set gps_rescue_sanity_checks = RESCUE_SANITY_ON
 set gps_rescue_min_sats = 8
 set gps_rescue_min_dth = 100
-set gps_rescue_allow_arming_without_fix = OFF
+set gps_rescue_allow_arming_without_fix = ON
 set gps_rescue_alt_mode = MAX_ALT
 set gps_rescue_use_mag = ON
 set deadband = 0
@@ -850,7 +869,7 @@ set sdcard_spi_bus = 1
 set sdio_clk_bypass = OFF
 set sdio_use_cache = OFF
 set sdio_use_4bit_width = OFF
-set osd_units = METRIC
+set osd_units = IMPERIAL
 set osd_warn_arming_disable = ON
 set osd_warn_batt_not_full = ON
 set osd_warn_batt_warning = ON
@@ -885,7 +904,7 @@ set osd_logo_on_arming_duration = 5
 set osd_tim1 = 2560
 set osd_tim2 = 2561
 set osd_vbat_pos = 2440
-set osd_rssi_pos = 2394
+set osd_rssi_pos = 346
 set osd_link_quality_pos = 2424
 set osd_rssi_dbm_pos = 345
 set osd_tim_1_pos = 234
@@ -904,22 +923,22 @@ set osd_mah_drawn_pos = 2400
 set osd_motor_diag_pos = 234
 set osd_craft_name_pos = 234
 set osd_display_name_pos = 234
-set osd_gps_speed_pos = 234
+set osd_gps_speed_pos = 2136
 set osd_gps_lon_pos = 234
 set osd_gps_lat_pos = 234
-set osd_gps_sats_pos = 234
-set osd_home_dir_pos = 234
-set osd_home_dist_pos = 234
+set osd_gps_sats_pos = 2048
+set osd_home_dir_pos = 2382
+set osd_home_dist_pos = 2072
 set osd_flight_dist_pos = 234
-set osd_compass_bar_pos = 234
-set osd_altitude_pos = 234
+set osd_compass_bar_pos = 2410
+set osd_altitude_pos = 2112
 set osd_pid_roll_pos = 234
 set osd_pid_pitch_pos = 234
 set osd_pid_yaw_pos = 234
 set osd_debug_pos = 234
 set osd_power_pos = 234
 set osd_pidrate_profile_pos = 234
-set osd_warnings_pos = 2057
+set osd_warnings_pos = 2058
 set osd_avg_cell_voltage_pos = 234
 set osd_pit_ang_pos = 234
 set osd_rol_ang_pos = 234
@@ -984,11 +1003,11 @@ set cpu_overclock = OFF
 set pwr_on_arm_grace = 5
 set scheduler_optimize_rate = AUTO
 set enable_stick_arming = OFF
-set vtx_band = 0
-set vtx_channel = 0
-set vtx_power = 0
+set vtx_band = 5
+set vtx_channel = 1
+set vtx_power = 3
 set vtx_low_power_disarm = OFF
-set vtx_freq = 0
+set vtx_freq = 5658
 set vtx_pit_mode_freq = 0
 set vtx_halfduplex = ON
 set vtx_spi_bus = 0
@@ -1075,7 +1094,7 @@ set stats = OFF
 set stats_total_flights = 0
 set stats_total_time_s = 0
 set stats_total_dist_m = 0
-set name = -
+set name = win5
 set display_name = -
 set position_alt_source = DEFAULT
 set box_user_1_name = -
