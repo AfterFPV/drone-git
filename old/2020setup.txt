@@ -1,8 +1,0 @@
-STOCK Version of Kakutef7
-
-#  version
-# Betaflight / KAKUTEF7 (KTF7) 4.0.4 Jun 30 2019 / 14:27:40 (f3a95efa3) MSP API: 1.41
-
-INCCORECT flashed to my win5
-# version
-# Betaflight / KAKUTEF7V2 (KT76) 4.1.5 Mar 16 2020 / 05:11:30 (d4e74e39c) MSP API: 1.42
