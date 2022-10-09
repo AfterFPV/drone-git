@@ -11,7 +11,7 @@ batch start
 board_name KAKUTEF7
 manufacturer_id HBRO
 
-# name: EcoMAX_Custom
+# name: LQ
 
 # resources
 resource BEEPER 1 D15
@@ -637,7 +637,7 @@ set vbat_duration_for_critical = 0
 set vbat_scale = 110
 set vbat_divider = 10
 set vbat_multiplier = 1
-set ibata_scale = 275
+set ibata_scale = 126
 set ibata_offset = 0
 set ibatv_scale = 0
 set ibatv_offset = 0
@@ -796,7 +796,7 @@ set osd_vbat_pos = 2392
 set osd_rssi_pos = 416
 set osd_link_quality_pos = 320
 set osd_link_tx_power_pos = 234
-set osd_rssi_dbm_pos = 2432
+set osd_rssi_dbm_pos = 2470
 set osd_tim_1_pos = 465
 set osd_tim_2_pos = 234
 set osd_remaining_time_estimate_pos = 234
@@ -811,7 +811,7 @@ set osd_ah_pos = 78
 set osd_current_pos = 2327
 set osd_mah_drawn_pos = 2361
 set osd_motor_diag_pos = 234
-set osd_craft_name_pos = 2496
+set osd_craft_name_pos = 2534
 set osd_display_name_pos = 234
 set osd_gps_speed_pos = 471
 set osd_gps_lon_pos = 234
@@ -821,14 +821,14 @@ set osd_home_dir_pos = 494
 set osd_home_dist_pos = 489
 set osd_flight_dist_pos = 234
 set osd_compass_bar_pos = 234
-set osd_altitude_pos = 18916
+set osd_altitude_pos = 18848
 set osd_pid_roll_pos = 234
 set osd_pid_pitch_pos = 234
 set osd_pid_yaw_pos = 234
 set osd_debug_pos = 234
 set osd_power_pos = 234
 set osd_pidrate_profile_pos = 234
-set osd_warnings_pos = 2464
+set osd_warnings_pos = 2502
 set osd_avg_cell_voltage_pos = 234
 set osd_pit_ang_pos = 234
 set osd_rol_ang_pos = 234
@@ -969,7 +969,7 @@ set stats_min_armed_time_s = -1
 set stats_total_flights = 0
 set stats_total_time_s = 0
 set stats_total_dist_m = 0
-set name = EcoMAX_Custom
+set name = LQ
 set display_name = -
 set position_alt_source = DEFAULT
 set position_alt_gps_min_sats = 10
