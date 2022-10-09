@@ -3,7 +3,8 @@
 # dump
 
 # version
-# Betaflight / KAKUTEF7 (KTF7) 4.3.1 Aug 25 2022 / 00:50:13 (8e4ff59a1) MSP API: 1.44
+# Betaflight / STM32F745 (S745) 4.3.1 Jul 13 2022 / 03:35:21 (8d4f005) MSP API: 1.44
+# config: manufacturer_id: HBRO, board_name: KAKUTEF7, version: cc8e118f, date: 2020-03-04T02:37:20Z
 
 # start the command batch
 batch start
@@ -11,7 +12,7 @@ batch start
 board_name KAKUTEF7
 manufacturer_id HBRO
 
-# name: LQ
+# name: EcoMAX
 
 # resources
 resource BEEPER 1 D15
@@ -40,6 +41,8 @@ resource PWM 5 NONE
 resource PWM 6 NONE
 resource PWM 7 NONE
 resource PWM 8 NONE
+resource SONAR_TRIGGER 1 NONE
+resource SONAR_ECHO 1 NONE
 resource LED_STRIP 1 D12
 resource SERIAL_TX 1 A09
 resource SERIAL_TX 2 D05
@@ -78,6 +81,7 @@ resource LED 2 NONE
 resource LED 3 NONE
 resource RX_BIND 1 NONE
 resource RX_BIND_PLUG 1 NONE
+resource TRANSPONDER 1 NONE
 resource SPI_SCK 1 A05
 resource SPI_SCK 2 B13
 resource SPI_SCK 3 NONE
@@ -99,6 +103,7 @@ resource BARO_CS 1 NONE
 resource BARO_EOC 1 NONE
 resource BARO_XCLR 1 NONE
 resource COMPASS_CS 1 NONE
+resource COMPASS_EXTI 1 NONE
 resource SDCARD_CS 1 A04
 resource SDCARD_DETECT 1 D08
 resource PINIO 1 NONE
@@ -106,12 +111,26 @@ resource PINIO 2 NONE
 resource PINIO 3 NONE
 resource PINIO 4 NONE
 resource USB_MSC_PIN 1 NONE
+resource FLASH_CS 1 NONE
 resource OSD_CS 1 B12
+resource RX_SPI_CS 1 NONE
+resource RX_SPI_EXTI 1 NONE
+resource RX_SPI_BIND 1 NONE
+resource RX_SPI_LED 1 NONE
+resource RX_SPI_CC2500_TX_EN 1 NONE
+resource RX_SPI_CC2500_LNA_EN 1 NONE
+resource RX_SPI_CC2500_ANT_SEL 1 NONE
+resource RX_SPI_EXPRESSLRS_RESET 1 NONE
+resource RX_SPI_EXPRESSLRS_BUSY 1 NONE
 resource GYRO_EXTI 1 E01
 resource GYRO_EXTI 2 NONE
 resource GYRO_CS 1 E04
 resource GYRO_CS 2 NONE
 resource USB_DETECT 1 A08
+resource VTX_POWER 1 NONE
+resource VTX_CS 1 NONE
+resource VTX_DATA 1 NONE
+resource VTX_CLK 1 NONE
 resource PULLUP 1 NONE
 resource PULLUP 2 NONE
 resource PULLUP 3 NONE
@@ -219,7 +238,6 @@ feature -RX_SPI
 feature -ESC_SENSOR
 feature -ANTI_GRAVITY
 feature RX_SERIAL
-feature LED_STRIP
 feature OSD
 feature AIRMODE
 feature ANTI_GRAVITY
@@ -262,7 +280,7 @@ beeper ARMING
 beeper ARMING_GPS_FIX
 beeper ARMING_GPS_NO_FIX
 beeper BAT_CRIT_LOW
-beeper BAT_LOW
+beeper -BAT_LOW
 beeper GPS_STATUS
 beeper RX_SET
 beeper ACC_CALIBRATION
@@ -516,7 +534,7 @@ set acc_hardware = AUTO
 set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = 23,17,-81,1
+set acc_calibration = -29,26,-76,1
 set align_mag = DEFAULT
 set mag_align_roll = 0
 set mag_align_pitch = 0
@@ -567,6 +585,9 @@ set rx_min_usec = 885
 set rx_max_usec = 2115
 set serialrx_halfduplex = OFF
 set msp_override_channels_mask = 0
+set rx_spi_protocol = V202_250K
+set rx_spi_bus = 0
+set rx_spi_led_inversion = OFF
 set adc_device = 1
 set adc_vrefint_calibration = 0
 set adc_tempsensor_calibration30 = 0
@@ -757,9 +778,12 @@ set ledstrip_brightness = 100
 set sdcard_detect_inverted = ON
 set sdcard_mode = SPI
 set sdcard_spi_bus = 1
+set sdio_clk_bypass = OFF
+set sdio_use_cache = OFF
+set sdio_use_4bit_width = OFF
 set osd_units = BRITISH
 set osd_warn_arming_disable = ON
-set osd_warn_batt_not_full = OFF
+set osd_warn_batt_not_full = ON
 set osd_warn_batt_warning = ON
 set osd_warn_batt_critical = ON
 set osd_warn_visual_beeper = ON
@@ -905,6 +929,7 @@ set vtx_softserial_alt = OFF
 set vtx_freq = 0
 set vtx_pit_mode_freq = 0
 set vtx_halfduplex = ON
+set vtx_spi_bus = 0
 set vcd_video_system = AUTO
 set vcd_h_offset = 0
 set vcd_v_offset = 0
@@ -923,6 +948,13 @@ set displayport_max7456_blk = 0
 set displayport_max7456_wht = 2
 set esc_sensor_halfduplex = OFF
 set esc_sensor_current_offset = 0
+set frsky_spi_autobind = OFF
+set frsky_spi_tx_id = 0,0,0
+set frsky_spi_offset = 0
+set frsky_spi_bind_hop_data = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+set frsky_x_rx_num = 0
+set frsky_spi_a1_source = VBAT
+set cc2500_spi_chip_detect = ON
 set led_inversion = 0
 set dashboard_i2c_bus = 1
 set dashboard_i2c_addr = 60
@@ -932,10 +964,12 @@ set camera_control_key_delay = 180
 set camera_control_internal_resistance = 470
 set camera_control_button_resistance = 450,270,150,68,0
 set camera_control_inverted = OFF
+set rangefinder_hardware = NONE
 set pinio_config = 1,1,1,1
 set pinio_box = 255,255,255,255
 set usb_hid_cdc = OFF
 set usb_msc_pin_pullup = ON
+set flash_spi_bus = 0
 set rcdevice_init_dev_attempts = 6
 set rcdevice_init_dev_attempt_interval = 1000
 set rcdevice_protocol_version = 0
@@ -956,7 +990,23 @@ set gyro_2_sensor_align = CW0
 set gyro_2_align_roll = 0
 set gyro_2_align_pitch = 0
 set gyro_2_align_yaw = 0
+set i2c1_pullup = OFF
+set i2c1_clockspeed_khz = 800
+set i2c2_pullup = OFF
+set i2c2_clockspeed_khz = 800
+set i2c3_pullup = OFF
+set i2c3_clockspeed_khz = 800
+set i2c4_pullup = OFF
+set i2c4_clockspeed_khz = 800
 set mco2_on_pc9 = OFF
+set spektrum_spi_protocol = 0
+set spektrum_spi_mfg_id = 0,0,0,0
+set spektrum_spi_num_channels = 0
+set expresslrs_uid = 0,0,0,0,0,0
+set expresslrs_domain = AU433
+set expresslrs_rate_index = 0
+set expresslrs_switch_mode = HYBRID
+set expresslrs_model_id = 255
 set scheduler_relax_rx = 25
 set scheduler_relax_osd = 25
 set timezone_offset_minutes = 0
@@ -965,11 +1015,13 @@ set rpm_filter_q = 500
 set rpm_filter_min_hz = 100
 set rpm_filter_fade_range_hz = 50
 set rpm_filter_lpf_hz = 150
+set flysky_spi_tx_id = 0
+set flysky_spi_rf_channels = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 set stats_min_armed_time_s = -1
 set stats_total_flights = 0
 set stats_total_time_s = 0
 set stats_total_dist_m = 0
-set name = LQ
+set name = EcoMAX
 set display_name = -
 set position_alt_source = DEFAULT
 set position_alt_gps_min_sats = 10
