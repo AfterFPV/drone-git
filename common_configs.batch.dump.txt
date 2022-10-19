@@ -32,31 +32,23 @@ set gps_provider = UBLOX
 set gps_rescue_min_sats = 6
 set gps_rescue_allow_arming_without_fix = ON
 
+
 # OSD
-set osd_units = IMPERIAL
-set osd_alt_alarm = 400
-set osd_vbat_pos = 2496
-set osd_rssi_pos = 346
-set osd_link_quality_pos = 366
-set osd_rssi_dbm_pos = 345
-set osd_tim_2_pos = 448
-set osd_flymode_pos = 2298
-set osd_throttle_pos = 269
-set osd_vtx_channel_pos = 340
-set osd_current_pos = 2464
-set osd_mah_drawn_pos = 2432
-set osd_gps_speed_pos = 2394
-set osd_gps_lon_pos = 174
-set osd_gps_lat_pos = 201
-set osd_gps_sats_pos = 2330
-set osd_home_dir_pos = 2542
-set osd_home_dist_pos = 2425
-set osd_compass_bar_pos = 362
-set osd_altitude_pos = 18745
-set osd_warnings_pos = 2057
-
-
-
+set osd_units = BRITISH
+set osd_warn_batt_not_full = OFF
+set osd_vbat_pos = 2497
+set osd_link_quality_pos = 2048
+set osd_flymode_pos = 2457
+set osd_throttle_pos = 2503
+set osd_gps_speed_pos = 2471
+set osd_gps_sats_pos = 2074
+set osd_home_dir_pos = 2511
+set osd_home_dist_pos = 2516
+set osd_altitude_pos = 18873
+set osd_efficiency_pos = 2439
+set osd_displayport_device = MSP
+set vcd_video_system = PAL
+set displayport_msp_serial = 0
 
 
 rateprofile 0
