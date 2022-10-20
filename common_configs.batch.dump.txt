@@ -46,6 +46,7 @@ set osd_home_dir_pos = 2511
 set osd_home_dist_pos = 2516
 set osd_altitude_pos = 18873
 set osd_efficiency_pos = 2439
+set osd_warnings_pos = 2057
 set osd_displayport_device = MSP
 set vcd_video_system = PAL
 set displayport_msp_serial = 0
