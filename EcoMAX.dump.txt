@@ -238,6 +238,7 @@ feature -RX_SPI
 feature -ESC_SENSOR
 feature -ANTI_GRAVITY
 feature RX_SERIAL
+feature GPS
 feature OSD
 feature AIRMODE
 feature ANTI_GRAVITY
@@ -246,7 +247,7 @@ feature ANTI_GRAVITY
 serial 20 1 115200 57600 0 115200
 serial 0 0 115200 57600 0 115200
 serial 1 0 115200 57600 0 115200
-serial 2 0 115200 57600 0 115200
+serial 2 2 115200 57600 0 115200
 serial 3 1 115200 57600 0 115200
 serial 5 64 115200 57600 0 115200
 serial 6 1024 115200 57600 0 115200
@@ -543,7 +544,7 @@ set mag_bustype = I2C
 set mag_i2c_device = 1
 set mag_i2c_address = 0
 set mag_spi_device = 0
-set mag_hardware = NONE
+set mag_hardware = AUTO
 set mag_calibration = 0,0,0
 set baro_bustype = I2C
 set baro_spi_device = 0
@@ -629,7 +630,7 @@ set failsafe_off_delay = 10
 set failsafe_throttle = 1000
 set failsafe_switch_mode = STAGE1
 set failsafe_throttle_low_delay = 100
-set failsafe_procedure = DROP
+set failsafe_procedure = GPS-RESCUE
 set failsafe_recovery_delay = 10
 set failsafe_stick_threshold = 30
 set align_board_roll = 0
@@ -689,7 +690,7 @@ set imu_dcm_ki = 0
 set small_angle = 180
 set auto_disarm_delay = 5
 set gyro_cal_on_first_arm = OFF
-set gps_provider = NMEA
+set gps_provider = UBLOX
 set gps_sbas_mode = NONE
 set gps_sbas_integrity = OFF
 set gps_auto_config = ON
@@ -717,11 +718,11 @@ set gps_rescue_throttle_max = 1600
 set gps_rescue_ascend_rate = 500
 set gps_rescue_descend_rate = 150
 set gps_rescue_throttle_hover = 1280
-set gps_rescue_sanity_checks = RESCUE_SANITY_ON
-set gps_rescue_min_sats = 8
+set gps_rescue_sanity_checks = RESCUE_SANITY_FS_ONLY
+set gps_rescue_min_sats = 6
 set gps_rescue_min_dth = 100
-set gps_rescue_allow_arming_without_fix = OFF
-set gps_rescue_alt_mode = MAX_ALT
+set gps_rescue_allow_arming_without_fix = ON
+set gps_rescue_alt_mode = CURRENT_ALT
 set gps_rescue_use_mag = ON
 set deadband = 0
 set yaw_deadband = 0
@@ -803,7 +804,7 @@ set osd_rssi_alarm = 20
 set osd_link_quality_alarm = 80
 set osd_rssi_dbm_alarm = -60
 set osd_cap_alarm = 2200
-set osd_alt_alarm = 100
+set osd_alt_alarm = 400
 set osd_distance_alarm = 0
 set osd_esc_temp_alarm = -128
 set osd_esc_rpm_alarm = -1
@@ -832,8 +833,8 @@ set osd_vtx_channel_pos = 234
 set osd_crosshairs_pos = 205
 set osd_ah_sbar_pos = 206
 set osd_ah_pos = 78
-set osd_current_pos = 279
-set osd_mah_drawn_pos = 313
+set osd_current_pos = 2464
+set osd_mah_drawn_pos = 2432
 set osd_motor_diag_pos = 234
 set osd_craft_name_pos = 486
 set osd_display_name_pos = 234
