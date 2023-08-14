@@ -12,7 +12,7 @@ batch start
 board_name KAKUTEH7
 manufacturer_id HBRO
 
-# name: Blastr6s-HD2
+# name: Blastr6s-HD3
 
 # resources
 resource BEEPER 1 C13
@@ -872,7 +872,7 @@ set osd_logo_on_arming = OFF
 set osd_logo_on_arming_duration = 5
 set osd_tim1 = 2560
 set osd_tim2 = 2561
-set osd_vbat_pos = 2497
+set osd_vbat_pos = 2504
 set osd_rssi_pos = 346
 set osd_link_quality_pos = 2048
 set osd_link_tx_power_pos = 234
@@ -880,28 +880,28 @@ set osd_rssi_dbm_pos = 345
 set osd_tim_1_pos = 234
 set osd_tim_2_pos = 448
 set osd_remaining_time_estimate_pos = 234
-set osd_flymode_pos = 2457
+set osd_flymode_pos = 2516
 set osd_anti_gravity_pos = 234
 set osd_g_force_pos = 234
-set osd_throttle_pos = 2503
+set osd_throttle_pos = 2489
 set osd_vtx_channel_pos = 340
 set osd_crosshairs_pos = 205
 set osd_ah_sbar_pos = 206
 set osd_ah_pos = 78
-set osd_current_pos = 2464
-set osd_mah_drawn_pos = 2432
+set osd_current_pos = 2496
+set osd_mah_drawn_pos = 2464
 set osd_motor_diag_pos = 234
 set osd_craft_name_pos = 234
 set osd_display_name_pos = 234
-set osd_gps_speed_pos = 2471
+set osd_gps_speed_pos = 2457
 set osd_gps_lon_pos = 174
 set osd_gps_lat_pos = 201
 set osd_gps_sats_pos = 2074
 set osd_home_dir_pos = 2511
-set osd_home_dist_pos = 2516
+set osd_home_dist_pos = 2393
 set osd_flight_dist_pos = 234
 set osd_compass_bar_pos = 362
-set osd_altitude_pos = 18873
+set osd_altitude_pos = 18745
 set osd_pid_roll_pos = 234
 set osd_pid_pitch_pos = 234
 set osd_pid_yaw_pos = 234
@@ -933,7 +933,7 @@ set osd_pid_profile_name_pos = 234
 set osd_profile_name_pos = 234
 set osd_rcchannels_pos = 234
 set osd_camera_frame_pos = 35
-set osd_efficiency_pos = 2439
+set osd_efficiency_pos = 391
 set osd_total_flights_pos = 234
 set osd_stat_rtc_date_time = OFF
 set osd_stat_tim_1 = OFF
@@ -1075,7 +1075,7 @@ set stats_min_armed_time_s = -1
 set stats_total_flights = 0
 set stats_total_time_s = 0
 set stats_total_dist_m = 0
-set name = Blastr6s-HD2
+set name = Blastr6s-HD3
 set display_name = -
 set position_alt_source = DEFAULT
 set position_alt_gps_min_sats = 10
