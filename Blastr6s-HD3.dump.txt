@@ -1,5 +1,3 @@
-# 
-
 # dump
 
 # version
@@ -294,7 +292,6 @@ feature RX_SERIAL
 feature GPS
 feature TELEMETRY
 feature OSD
-feature AIRMODE
 feature ANTI_GRAVITY
 
 # serial
